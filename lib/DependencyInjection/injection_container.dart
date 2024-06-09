@@ -11,6 +11,6 @@ final locator = GetIt.instance;
 
 void setup(){
   //locator.registerSingleton<AppService>(AppService());
-  //locator.registerLazySingleton<AppService>(() => AppService());
-  locator.registerFactory<AppService>(() => AppService());
+  locator.registerLazySingleton<AppService>(() => AppService());
+  //locator.registerFactory<AppService>(() => AppService());
 }
