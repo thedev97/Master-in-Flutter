@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
+void main(){
+  Dog dog = Dog();
+  dog.eat();
+}
+
 class Dog extends Animal with CanBark {
   void walk() {
     debugPrint("Walking...");
@@ -19,26 +24,5 @@ class Animal {
 mixin CanBark {
   void canBark() {
     debugPrint("Barking...");
-  }
-}
-
-class MixInClass extends StatefulWidget {
-  const MixInClass({super.key});
-
-  @override
-  State<MixInClass> createState() => _MixInClassState();
-}
-
-class _MixInClassState extends State<MixInClass> {
-  @override
-  void initState() {
-    Dog dog = Dog();
-    dog.eat();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }

@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+
+void main(){
+  Cow c = Cow();
+  debugPrint("Cow has ${c.eye} eyes.");
+  c.walk();
+  c.sleep();
+  c.reproduction();
+}
+
 abstract class Animal {
   int get eye;
   void walk();
@@ -27,28 +36,5 @@ class Cow implements Animal, Manimal {
   @override
   void reproduction() {
     debugPrint("Reproduction");
-  }
-}
-
-class InterfaceClass extends StatefulWidget {
-  const InterfaceClass({super.key});
-
-  @override
-  State<InterfaceClass> createState() => _InterfaceClassState();
-}
-
-class _InterfaceClassState extends State<InterfaceClass> {
-  @override
-  void initState() {
-    Cow c = Cow();
-    debugPrint("Cow has ${c.eye} eyes.");
-    c.walk();
-    c.sleep();
-    c.reproduction();
-    super.initState();
-  }
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
