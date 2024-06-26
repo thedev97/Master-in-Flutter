@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_interview_ques/DependencyInjection/app_service.dart';
 import 'package:flutter_interview_ques/DependencyInjection/injection_container.dart';
+import 'package:flutter_interview_ques/Streams/my_stream.dart';
 
 void main() {
   setup();
@@ -12,37 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(onPressed: (){
-              String sample = locator<AppService>().execute();
-              debugPrint(sample);
-            }, child: const Text('Sample'))
-          ],
-        ),
-      ),
+      home: const MyStreamClass(),
     );
   }
 }
