@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_interview_ques/DependencyInjection/injection_container.dart';
 import 'package:flutter_interview_ques/InheritedWidget/state_widget.dart';
-import 'package:flutter_interview_ques/Streams/my_stream.dart';
-
-import 'InheritedWidget/Screens/home.dart';
+import 'package:flutter_interview_ques/Routing/RoutingManagement/route_generator.dart';
+import 'Routing/Screens/first.dart';
 
 void main() {
   setup();
@@ -26,7 +25,8 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const Home(),
+            initialRoute: '/',
+            onGenerateRoute: RouteGenerator.generateRoute,
           );
         }
       ),
