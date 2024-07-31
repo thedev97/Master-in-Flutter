@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_interview_ques/DependencyInjection/injection_container.dart';
 import 'package:flutter_interview_ques/InheritedWidget/state_widget.dart';
 import 'package:flutter_interview_ques/Routing/RoutingManagement/route_generator.dart';
-import 'Routing/Screens/first.dart';
 
 void main() {
   setup();

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_interview_ques/Routing/Screens/first.dart';
+import 'package:flutter_interview_ques/FlutterKey/global_key.dart';
+import 'package:flutter_interview_ques/FlutterKey/object_key.dart';
 import 'package:flutter_interview_ques/Routing/Screens/second.dart';
 
 class RouteGenerator {
@@ -7,12 +8,14 @@ class RouteGenerator {
     var args = settings.arguments;
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const FirstPage());
+        return MaterialPageRoute(builder: (_) => const UsersListPage());
       case '/second':
         if (args is String) {
           return MaterialPageRoute(builder: (_) => SecondPage(data: args));
         }
         return _errorRoute();
+      case '/secondScreen':
+          return MaterialPageRoute(builder: (_) => const SecondScreen());
       default:
         return _errorRoute();
     }
@@ -23,15 +26,10 @@ class RouteGenerator {
       return Scaffold(
         appBar: AppBar(
           elevation: 2,
-          title: const Text('Routing App',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700)),
+          title: const Text('Routing App'),
         ),
         body: const Center(
-          child: Text(
-            'Error',
-            style: TextStyle(
-                color: Colors.red, fontWeight: FontWeight.w500, fontSize: 35),
-          ),
+          child: Text('Error'),
         ),
       );
     });

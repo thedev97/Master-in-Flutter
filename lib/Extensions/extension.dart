@@ -7,6 +7,6 @@ void main(){
 
 extension on DateTime {
   get myCurrentDate {
-    return "${this.day}/${this.month}/${this.year}";
+    return "$day/$month/$year";
   }
 }

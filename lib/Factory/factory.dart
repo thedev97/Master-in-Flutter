@@ -8,9 +8,7 @@ class Person {
   Person(this.age, this.name);
 
   factory Person.p1() {
-    if (person1 == null) {
-      person1 = Person(15, "Soumya");
-    }
+    person1 ??= Person(15, "Soumya");
     return person1!;
   }
 }
