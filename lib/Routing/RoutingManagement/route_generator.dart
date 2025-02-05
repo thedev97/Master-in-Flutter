@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_interview_ques/DependencyInjection/Screens/home_di.dart';
 import 'package:flutter_interview_ques/FlutterKey/global_key.dart';
 import 'package:flutter_interview_ques/FlutterKey/object_key.dart';
 import 'package:flutter_interview_ques/Routing/Screens/second.dart';
@@ -8,6 +9,8 @@ class RouteGenerator {
     var args = settings.arguments;
     switch (settings.name) {
       case '/':
+        return MaterialPageRoute(builder: (_) =>  const HomeScreen());
+      case '/user':
         return MaterialPageRoute(builder: (_) => const UsersListPage());
       case '/second':
         if (args is String) {

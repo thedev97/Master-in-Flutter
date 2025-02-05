@@ -3,10 +3,12 @@ import 'package:flutter/cupertino.dart';
 class AppService{
 
   AppService(){
-    debugPrint("Service is called");
+    debugPrint('App Service Initialized');
   }
 
   String execute(){
-    return "Sample Data";
+    DateTime now = DateTime.now();
+    DateTime date = DateTime(now.year,  now.month, now.day,);
+    return 'Date: ${date.toString()}';
   }
 }
